@@ -12,3 +12,13 @@ This is my first (and primary) [cookiecutter](https://cookiecutter.readthedocs.i
 - [GitHub](https://github.com/): Version control and CI workflows (CD to come? Might be too different project to project)
 
 See [this blog post](https://www.raaid.xyz/posts/tech/learning2) for more info on the pre-commit and code formatting tools.
+
+## How to use this
+
+[Follow instructions here to install cookiecutter.](https://cookiecutter.readthedocs.io/en/stable/installation.html#install-cookiecutter)
+
+Then in the directory where you'd like a new Python project, run:
+
+`> cookiecutter https://github.com/raaidarshad/cookiecutter-raaid`
+
+Then follow the interactive prompts.
