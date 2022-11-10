@@ -1,12 +1,14 @@
+#!/usr/bin/env bash
+
 # create virtual environment, install dependencies, and create lock file
-{% if cookiecutter.venv %}
+{% if cookiecutter.venv is sameas true %}
 echo "Creating virtual environment and installing dependencies..."
 cd '{{ cookiecutter.project_name }}' && poetry install
 echo "Virtual environment created."
 echo "Dependencies installed."
 {% endif %}
 
-{% if cookiecutter.git %}
+{% if cookiecutter.git is sameas true %}
 # initialize git with "main" branch instead of "master"
 echo "Initializing git..."
 git init && git checkout -b main
