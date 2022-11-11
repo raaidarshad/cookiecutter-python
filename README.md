@@ -19,6 +19,6 @@ See [this blog post](https://www.raaid.xyz/posts/tech/learning2) for more info o
 
 Then in the directory where you'd like a new Python project, run:
 
-`> cookiecutter https://github.com/raaidarshad/cookiecutter-raaid`
+`> cookiecutter https://github.com/raaidarshad/cookiecutter-python`
 
 Then follow the interactive prompts.
