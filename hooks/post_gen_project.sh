@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # make sure python version is present and available
-pyenv install {{ cookiecutter.python_version }}
+pyenv install --skip-existing {{ cookiecutter.python_version }}
 pyenv local {{ cookiecutter.python_version }}
 
 # create virtual environment, install dependencies, and create lock file
