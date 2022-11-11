@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # make sure python version is present and available
-pyenv install {{cookiecutter.python_version}}
-pyenv local {{cookiecutter.python_version}}
+pyenv install {{ cookiecutter.python_version }}
+pyenv local {{ cookiecutter.python_version }}
 
 # create virtual environment, install dependencies, and create lock file
 {% if cookiecutter.create_venv == 'true' %}
@@ -41,7 +41,7 @@ done
 
 # use github cli to create and push project
 echo "Creating repository on GitHub..."
-gh repo create '{{ cookiecutter.project_name }}' --source=. $private_flag --description "$proj_description" --push
+gh repo create '{{ cookiecutter.github_owner }}/{{ cookiecutter.project_name }}' --source=. $private_flag --description "$proj_description" --push
 echo "GitHub repository created."
 
 echo "All done! Happy coding =)"
