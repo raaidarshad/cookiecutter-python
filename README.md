@@ -28,6 +28,7 @@ Then follow the interactive prompts.
 Apart from `cookiecutter`, the `post_gen_project.sh` script assumes the following:
 
 - You are using a Linux distro (I use Ubuntu)
+- You have [pyenv](https://github.com/pyenv/pyenv) installed
 - You have [poetry](https://python-poetry.org/) installed
 - You have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed
 - You have the [GitHub CLI](https://github.com/cli/cli) installed

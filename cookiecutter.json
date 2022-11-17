@@ -1,12 +1,13 @@
 {
     "author": "Raaid Arshad",
     "email": "raaid@protonmail.com",
-    "author_github_handle" : "raaidarshad",
+    "github_owner" : "raaidarshad",
     "project_name": "example-project",
     "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
     "project_description": "This is a template repository for Python projects that use Poetry for their dependency management.",
     "python_version": "3.11.0",
     "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
     "create_venv": ["true", "false"],
-    "init_git": ["true", "false"]
+    "init_git": ["true", "false"],
+    "create_dockerfile": ["true", "false"]
 }
