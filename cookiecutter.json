@@ -8,5 +8,6 @@
     "python_version": "3.11.0",
     "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
     "create_venv": ["true", "false"],
-    "init_git": ["true", "false"]
+    "init_git": ["true", "false"],
+    "create_dockerfile": ["true", "false"]
 }

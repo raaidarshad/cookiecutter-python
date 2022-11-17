@@ -38,7 +38,8 @@ exclude = '''
 profile = "black"
 
 [tool.mypy]
-ignore_missing_imports = "True"
+strict = "True"
+files = "src/main.py"
 exclude = [
     '\.venv',
     'tests'
