@@ -8,6 +8,11 @@ pyenv local {{ cookiecutter.python_version }}
 rm Dockerfile
 {% endif %}
 
+
+{% if cookiecutter.create_pypi_publish_action == 'false' %}
+rm .github/workflows/on-merge-to-main.yaml
+{% endif %}
+
 # create virtual environment, install dependencies, and create lock file
 {% if cookiecutter.create_venv == 'true' %}
 echo "Creating virtual environment and installing dependencies..."
