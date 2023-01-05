@@ -13,5 +13,5 @@ FROM python:{{cookiecutter.python_version}}-slim as runner
 # run any updates and run dependencies here
 # RUN apt-get update && apt-get install --no-install-recommends -y libpq-dev
 COPY --from=builder /root/.local /root/.local
-COPY /src/ /src/
+COPY /{{cookiecutter.project_slug}}/ /{{cookiecutter.project_slug}}/
 ENV PATH=/root/.local/bin:$PATH
