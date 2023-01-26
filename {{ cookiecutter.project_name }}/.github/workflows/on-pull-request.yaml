@@ -10,16 +10,16 @@ jobs:
   run-checks:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         # change this python version if the python version is changed in pyproject.toml and the Dockerfile
         python-version: '{{cookiecutter.python_version}}'
     - name: Set up Poetry
       uses: abatilo/actions-poetry@v2.0.0
       with:
-        poetry-version: 1.1.13
+        poetry-version: 1.2.2
     - name: Install dependencies
       run: poetry config virtualenvs.create false && poetry install --no-interaction
     - name: run mypy
