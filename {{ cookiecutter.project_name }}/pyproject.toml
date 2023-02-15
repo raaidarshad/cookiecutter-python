@@ -2,6 +2,7 @@
 name = "{{cookiecutter.project_name}}"
 version = "0.0.1"
 description = "{{cookiecutter.project_description}}"
+license = "{{cookiecutter.open_source_license}}"
 authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
 repository = "https://github.com/{{cookiecutter.github_owner}}/{{cookiecutter.project_name}}"
 readme = "README.md"
@@ -10,7 +11,7 @@ readme = "README.md"
 python = "{{cookiecutter.python_version}}"
 
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 mypy = "^0.961"
 pre-commit = "^2.19.0"
 pytest = "^7.1.2"
