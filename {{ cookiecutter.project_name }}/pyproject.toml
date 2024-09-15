@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "{{cookiecutter.project_name}}"
-version = "0.0.1"
+version = "0.0.2"
 description = "{{cookiecutter.project_description}}"
 license = "{{cookiecutter.open_source_license}}"
 authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
@@ -15,29 +15,35 @@ python = "{{cookiecutter.python_version}}"
 mypy = "^0.961"
 pre-commit = "^2.19.0"
 pytest = "^7.1.2"
+ruff = "^0.6.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.black]
+[tool.ruff]
 line-length = 120
-include = '\.pyi?$'
-exclude = '''
-(
-  /(                        # exclude a few common directories in the
-    \.git                   # root of the project
-    | \.pytest_cache
-    | python-venv
-    | \.venv
-    | build
-    | dist
-    | \.tox
-  ))
-'''
+exclude = [
+  ".git",
+  ".pytest_cache",
+  "python-venv",
+  ".venv",
+  "build",
+  "dist",
+  ".tox",
+  ".env",
+  "__pycache__"
+]
 
-[tool.isort]
-profile = "black"
+[tool.ruff.lint]
+select = ["B", "C", "E", "F", "W", "B9"]
+ignore = ["E203", "E501", "F403"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 18
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
 
 [tool.mypy]
 strict = "True"
