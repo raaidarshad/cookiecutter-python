@@ -16,6 +16,8 @@ rm .github/workflows/on-merge-to-main.yaml
 # create virtual environment, install dependencies, and create lock file
 {% if cookiecutter.create_venv == 'true' %}
 echo "Creating virtual environment and installing dependencies..."
+poetry config virtualenvs.create true --local
+poetry config virtualenvs.in-project true --local
 poetry install
 echo "Virtual environment created."
 echo "Dependencies installed."
