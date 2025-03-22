@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # make sure python version is present and available
-pyenv install --skip-existing {{ cookiecutter.python_version }}
-pyenv local {{ cookiecutter.python_version }}
+uv python install {{ cookiecutter.python_version }}
 
 {% if cookiecutter.create_dockerfile == 'false' %}
 rm Dockerfile
@@ -16,9 +15,9 @@ rm .github/workflows/on-merge-to-main.yaml
 # create virtual environment, install dependencies, and create lock file
 {% if cookiecutter.create_venv == 'true' %}
 echo "Creating virtual environment and installing dependencies..."
-poetry config virtualenvs.create true --local
-poetry config virtualenvs.in-project true --local
-poetry install
+uv venv --python {{ cookiecutter.python_version }}
+uv lock
+uv sync
 echo "Virtual environment created."
 echo "Dependencies installed."
 {% endif %}
@@ -32,7 +31,7 @@ echo "Git initialized."
 
 # activate virtual environment, install pre-commit, deactivate virtual environment
 echo "Installing pre-commit..."
-source $(poetry env list --full-path)/bin/activate && pre-commit install && deactivate
+source .venv/bin/activate && pre-commit install && deactivate
 echo "Pre-commit installed."
 
 # create a new gh repo and push the project up to the remote
